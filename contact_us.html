@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+<head>
+	<!-- CSS Links -->
+	<link rel="stylesheet" media="all" type="text/css" href="CSS/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,900,900i" rel="stylesheet">
+
+	<!-- JS Links -->
+	<script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="JS/histogram-bellcurve.js"></script>
+	<!-- Highchart Links --> 
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			Highcharts.chart('wkday_chart', {
+			  chart: {
+			    type: 'column'
+			  },
+			  title: {
+			    text: 'Weekday Hours'
+			  },
+			  subtitle: {
+			    text: ''
+			  },
+			  xAxis: {
+			    categories: [
+			      '12pm',
+			      '1pm',
+			      '2pm',
+			      '3pm',
+			      '4pm',
+			      '5pm',
+			      '6pm',
+			      '7pm',
+			      '8pm',
+			      '9pm',
+			      '10pm',
+			      '11pm'
+			    ],
+			    crosshair: true
+			  },
+			  yAxis: {
+			    min: 0,
+			    title: {
+			      text: 'People'
+			    }
+			  },
+			  tooltip: {
+			    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+			    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+			      '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+			    footerFormat: '</table>',
+			    shared: true,
+			    useHTML: true
+			  },
+			  plotOptions: {
+			    column: {
+			      pointPadding: 0,
+			      borderWidth: 0,
+			      groupPadding: 0,
+			      shadow: false
+			    }
+			  },
+			  series: [{
+			    name: 'Hours',
+			    data: [10, 8, 24, 5, 7, 32, 16, 18, 27, 39, 32, 22]
+
+			  }]
+			});
+		}
+	</script>
+	<!-- Metadata for the website -->
+	<meta charset="utf-8" />
+	<meta name="author" content=" Maksym Kornyev">
+	<meta name="keywords" content="Butterwood Bake Consortium, Baking, Cakes, Delicacies">
+	<meta name="description" content="Official Website of the Butterwood Bake Consortium">
+</head>
+
+<body id="container"> <!-- 100% screen width used-->
+	<title>Contact Us: Butterwood Bake Consortium</title>
+
+	<div id="sidebar">
+
+		<!-- Logo -->
+		<div id="image_container"><div id="image_bg">
+			<img src="images/logo.png" width="80%" alt="Logo" class="responsive" id="logo">
+		</div></div>
+		<hr>
+		<!-- Nav Links -->
+		<a href="index.html"><button type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+		<a href="events.html"><button type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Events&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+		<a href="order.html"><button type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+		<a href="contact_us.html" id="hbutton"><button type="button">Contact Us</button></a>
+		<hr>
+		<!-- Social Links -->
+		<a href="https://www.facebook.com/thebutterwoodbakeconsortium" target="_blank"><button type="button">Our Facebook</button></a>
+		<a href="https://www.instagram.com/thebutterwoodbakeconsortium/" target="_blank"><button type="button">Our Instagram</button></a>
+		<hr>
+		<!-- Store Hours -->
+		<div id="hours" class="responsive">
+			<h2>Hours:</h2>
+			<ul>
+			<li>Wed-Fri 12PM - 11PM</li>
+			<li>Sat 10AM - 11PM</li>
+			<li>Sun 10AM - 9PM</li>
+			</ul>
+		</div>
+		<div id="sidefooter"> Webmaster: <a href="mailto:mkornyev@andrew.cmu.edu" id="wm_mailto">mkornyev</a>&nbsp;&copy;2019</div>
+	</div>
+
+	<div id="content">
+		<!-- Content Row 1 --> 
+		<h3><em>The Butterwood Bake Consortium</em></h3><br>
+		<div id="content_img">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.7449133339405!2d-79.95592068466591!3d40.48090797935763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f2f80929711b%3A0x169402af50d86e6c!2sThe+Butterwood+Bake+Consortium!5e0!3m2!1sen!2sus!4v1553309885352" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<!-- Content Row 2: Info Table --> 	
+		<div id="content_bio">
+			<table id="infotable">
+			  <tr>
+			  	<th>Category</th>
+			  	<th>Answer</th>
+			  </tr>
+			  <tr>
+			    <td>Address</td>
+			    <td>Lawrenceville 
+					5222 Butler St
+					Pittsburgh, PA
+					15201</td>
+			  </tr>
+			  <tr>
+			    <td>Phone Number</td>
+			    <td>412-781-0218</td>
+			  </tr>
+			  <tr>
+			    <td>Email</td>
+			    <td>info@thebutterwood.com</td>
+			  </tr>
+			  <tr>
+			    <td>Web</td>
+			    <td><a href="https://www.thebutterwoodbakeconsortium.com/">thebutterwoodbakingconsortium.com</a></td>
+			  </tr>
+			  <tr>
+			    <td>What we look like</td>
+			    <td><a href="https://www.thebutterwoodbakeconsortium.com/"><img src="images/storefront.jpg" alt="Storefront" class="responsive"></a></td>
+			  </tr>
+			</table>
+			
+		</div><br>	
+	</div>
+
+	<div id="content2">
+		<h2><em>When we're most busy:<em></h2>
+		<div id="wkday_chart"></div>
+		
+	</div>
+
+	<div id="content3">
+		<h2><em>Want to get in touch?<em></h2>
+		<p>If you want to place an order, use the Order tab on the sidebar to your left.<p>
+		<h4 id="contact_form">Contact Form</h4>
+		<hr>
+
+		<!-- Form -->
+		<form onsubmit="return validate()">
+		<fieldset>
+			<input type="text" pattern="[A-Za-z -]*" name="name" maxlength="20" placeholder="Name*"><br>
+			<input type="email" pattern=".+@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))" name="email" placeholder="Email*" required><br>
+			<input type="text" pattern="[0-9]{5}" name="zip" placeholder="Name*"/><br>
+			<textarea name="message" rows="10" cols="50" maxlength="1000" placeholder="Leave us a message"></textarea><br>
+			<input class="checkbox" type="checkbox" name="updates" value="on">Send me details<br>
+			<a href="index.html"><button type="button">Submit</button></a>
+		</fieldset>
+		</form>
+
+	</div>
+
+</body>
