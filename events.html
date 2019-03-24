@@ -5,6 +5,7 @@
 <head>
 	<!-- CSS Links -->
 	<link rel="stylesheet" media="all" type="text/css" href="CSS/styles.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="CSS/mobile_styles.css" />
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,900,900i" rel="stylesheet">
 	<link rel="stylesheet" media="all" type="text/css" href="CSS/jquery-ui.css" />
 	<!-- <link rel="stylesheet" media="all" type="text/css" href="CSS/jquery-ui.css" /> -->
@@ -35,6 +36,7 @@
 </head>
 
 <body id="container"> <!-- 100% screen width used-->
+<div id="mobile">
 	<title>Events: Wedings, Celebrations, and Holidays</title>
 
 	<div id="sidebar">
@@ -67,7 +69,15 @@
 	</div>
 
 	<div id="events">
+		<!-- Mobile only nav links-->
+		<div id="mobile-nav">
+			<a href="index.html"><button type="button">Home</button></a>
+			<a href="events.html" id="hbutton"><button type="button">Events</button></a>
+			<a href="order.html"><button type="button">Order</button></a>
+			<a href="contact_us.html"><button type="button">Contact Us</button></a>
+		</div><br>
 		<h3><em>Events</em></h3><br>
+
 		Peruse some of our event offerings here. Click each pane category for more details. 
 		<h2>Weddings</h2>
 		<hr>
@@ -134,4 +144,5 @@
 		</div><br>	
 	</div>
 
+</div>
 </body>

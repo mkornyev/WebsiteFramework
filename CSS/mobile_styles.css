@@ -1,0 +1,66 @@
+
+/* Mobile/Responsive Styling for the Events page is added here */
+/* A custom nav is included in place of a sidebar */ 
+/* Page content is resized and centered */ 
+
+.responsive {
+	max-width: 100%; /* Of the parent element */ 
+	height: auto; 
+	font-size: auto;
+}
+
+@media screen and (max-width: 480px) { 
+	#sidebar {
+		display: none;
+	}
+
+	#mobile {
+		font-size: auto;
+	}
+
+	#mobile-nav {
+		display: inline-block;
+		background-color: #580c3b;
+		width: 100%;
+		height: 6%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+	#mobile-nav button {
+		color: #0c5829;
+    	border-color: #0c5829;
+    	margin-top: 3%;
+    	margin-left: 3%;
+    	height: auto;
+    	width: auto;
+	}
+
+	#mobile-nav button:hover {
+		color: #f1bb99;
+		border-color: #f1bb99;
+	}
+
+	#hbutton button {
+		color: #f1bb99;
+    	border-color: #f1bb99;
+	}
+
+	#hbutton button:hover {
+		color: #0c5829;
+    	border-color: #0c5829;
+	}
+
+	#accordion p, #accordion2 p {
+		font-size: .75em;
+	}
+
+	#events {
+		padding-left: 0em;
+		width: 100%;
+	}
+
+}
+

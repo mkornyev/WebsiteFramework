@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+<head>
+	<!-- CSS Links -->
+	<link rel="stylesheet" media="all" type="text/css" href="CSS/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,900,900i" rel="stylesheet">
+	<link rel="stylesheet" media="all" type="text/css" href="CSS/jquery-ui.css" />
+	<!-- <link rel="stylesheet" media="all" type="text/css" href="CSS/jquery-ui.css" /> -->
+	<!-- <link rel="stylesheet" media="screen and (max-width: 480px)" href="CSS/stylesmobile.css" /> -->
+
+	<!-- JS Links -->
+	<script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="JS/jssor.slider-27.5.0.min.js"></script>
+	<script type="text/javascript" src="JS/jquery-ui.js"></script>
+
+	<!-- Accordion Function -->
+	<script>
+	  $(function() {
+	  	$("#accordion").accordion();
+      });
+	</script>
+	<script>
+	  $(function() {
+	  	$("#accordion2").accordion();
+      });
+	</script>
+
+	<!-- Metadata for the website -->
+	<meta charset="utf-8" />
+	<meta name="author" content=" Maksym Kornyev">
+	<meta name="keywords" content="Butterwood Bake Consortium, Baking, Cakes, Delicacies">
+	<meta name="description" content="Official Website of the Butterwood Bake Consortium">
+</head>
+
+<body id="container"> <!-- 100% screen width used-->
+
+	<div id="sidebar">
+
+		<!-- Logo -->
+		<div id="image_container"><div id="image_bg">
+			<img src="images/logo.png" width="80%" alt="Logo" class="responsive" id="logo">
+		</div></div>
+		<hr>
+		<!-- Nav Links -->
+		<a href="index.html"><button type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+		<a href="events.html"><button type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Events&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+		<a href="order.html" id="hbutton"><button type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+		<a href="contact_us.html"><button type="button">Contact Us</button></a>
+		<hr>
+		<!-- Social Links -->
+		<a href="https://www.facebook.com/thebutterwoodbakeconsortium" target="_blank"><button type="button">Our Facebook</button></a>
+		<a href="https://www.instagram.com/thebutterwoodbakeconsortium/" target="_blank"><button type="button">Our Instagram</button></a>
+		<hr>
+		<!-- Store Hours -->
+		<div id="hours" class="responsive">
+			<h2>Hours:</h2>
+			<ul>
+			<li>Wed-Fri 12PM - 11PM</li>
+			<li>Sat 10AM - 11PM</li>
+			<li>Sun 10AM - 9PM</li>
+			</ul>
+		</div>
+		<div id="sidefooter"> Webmaster: <a href="mailto:mkornyev@andrew.cmu.edu" id="wm_mailto">mkornyev</a>&nbsp;&copy;2019</div>
+	</div>
+
+	<div id="content3">
+		<title>Order: Butterwood Bake Consortium</title>
+
+		<h3 id="order_title"><em>Order</em></h3><br>
+		Place an order for one of our whole pies here. Thank you for using our services! 
+
+		<!-- Form -->
+		<form onsubmit="return validate()">
+		<fieldset>
+
+			<label>Customer Details</label><hr>
+			<input type="text" pattern="[A-Za-z -]*" name="name" maxlength="20" placeholder="First Name*" required><br>
+			<input type="text" pattern="[A-Za-z -]*" name="name" maxlength="20" placeholder="Last Name*" required><br>
+			<input type="text" pattern="[A-Za-z1-9 -]*" name="address" maxlength="40" placeholder="Billing Address*" required><br>
+			<input type="email" pattern=".+@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))" name="email" placeholder="Email*" required><br>
+			<input type="text" pattern="[0-9]{10}" name="phone" maxlength="10" placeholder="Phone*"/><br>
+
+			<label>Order Details</label><hr>
+			<label>Quantity:</label><br>
+
+			<div id="type_selection">
+			<select>
+			  <option value="">1</option>
+			  <option value="">2</option>
+			  <option value="">3</option>
+			  <option value="">4</option>
+			  <option value="">5</option>
+			  <option value="">6</option>
+			  <option value="">7</option>
+			  <option value="">8</option>
+			  <option value="">9</option>
+			  <option value="">10</option>
+			</select><br>
+		    </div>
+
+			<label>Pie Type:</label><br>
+			<div id="type_selection">
+			Homestyle<input id="radio" name="radio" type="radio"><br>
+			Butterwood<input id="radio" name="radio" type="radio"><br>
+			</div>
+
+			<input class="checkbox" type="checkbox" value="on">Send me details<br>
+			<button type="submit" name="contact_form_submit" value="Send">Submit</button><br/><br/>
+			<button type="reset" name="contact_form_submit" value="Reset">Reset</button>
+		</fieldset>
+		</form>
+		
+		
+	</div>
+
+</body>

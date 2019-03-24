@@ -9,70 +9,93 @@
 
 	<!-- JS Links -->
 	<script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="JS/histogram-bellcurve.js"></script>
-	<!-- Highchart Links --> 
-	<script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
-	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script type="text/javascript" src="JS/scripts.js"></script>
+	<!-- Google Graphs Links --> 
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<!-- Chart 1 -->
 	<script type="text/javascript">
-		$(function() {
-			Highcharts.chart('wkday_chart', {
-			  chart: {
-			    type: 'column'
-			  },
-			  title: {
-			    text: 'Weekday Hours'
-			  },
-			  subtitle: {
-			    text: ''
-			  },
-			  xAxis: {
-			    categories: [
-			      '12pm',
-			      '1pm',
-			      '2pm',
-			      '3pm',
-			      '4pm',
-			      '5pm',
-			      '6pm',
-			      '7pm',
-			      '8pm',
-			      '9pm',
-			      '10pm',
-			      '11pm'
-			    ],
-			    crosshair: true
-			  },
-			  yAxis: {
-			    min: 0,
-			    title: {
-			      text: 'People'
-			    }
-			  },
-			  tooltip: {
-			    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-			    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-			      '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-			    footerFormat: '</table>',
-			    shared: true,
-			    useHTML: true
-			  },
-			  plotOptions: {
-			    column: {
-			      pointPadding: 0,
-			      borderWidth: 0,
-			      groupPadding: 0,
-			      shadow: false
-			    }
-			  },
-			  series: [{
-			    name: 'Hours',
-			    data: [10, 8, 24, 5, 7, 32, 16, 18, 27, 39, 32, 22]
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
 
-			  }]
-			});
-		}
-	</script>
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Time', 'Visitors', { role: 'style' } ],
+          ['12pm', 10, 'color: #0c5829'],
+          ['1pm', 8, 'color: #0c5829'],
+          ['2pm', 24, 'color: #0c5829'],
+          ['3pm', 5, 'color: #0c5829'],
+          ['4pm', 7, 'color: #0c5829'],
+          ['5pm', 32, 'color: #0c5829'],
+          ['6pm', 16, 'color: #0c5829'],
+          ['7pm', 18, 'color: #0c5829'],
+          ['8pm', 27, 'color: #0c5829'],
+          ['9pm', 39, 'color: #0c5829'],
+          ['10pm', 32, 'color: #0c5829'],
+          ['11pm', 22, 'color: #0c5829']
+        ]);
+
+        var options = {
+          width: 300,
+          height: 175,
+          legend: { position: 'none' },
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Weekday Hours'} // Top x-axis.
+            },
+            y: {
+              0: { side: 'left', label: 'Visitors' } 
+            }
+          },
+          bar: { groupWidth: "100%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('wkday_chart'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
+    <!-- Chart 2 -->
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Time', 'Visitors', { role: 'style' } ],
+          ['10am', 30, 'color: #0c5829'],
+          ['11am', 33, 'color: #0c5829'],
+          ['12pm', 50, 'color: #0c5829'],
+          ['1pm', 48, 'color: #0c5829'],
+          ['2pm', 25, 'color: #0c5829'],
+          ['3pm', 28, 'color: #0c5829'],
+          ['4pm', 27, 'color: #0c5829'],
+          ['5pm', 24, 'color: #0c5829'],
+          ['6pm', 46, 'color: #0c5829'],
+          ['7pm', 66, 'color: #0c5829'],
+          ['8pm', 73, 'color: #0c5829'],
+          ['9pm', 70, 'color: #0c5829']
+        ]);
+
+        var options = {
+          width: 300,
+          height: 175,
+          legend: { position: 'none' },
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Weekend Hours'} // Top x-axis.
+            },
+            y: {
+              0: { side: 'left', label: 'Visitors' } 
+            }
+          },
+          bar: { groupWidth: "100%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('wkend_chart'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
 	<!-- Metadata for the website -->
 	<meta charset="utf-8" />
 	<meta name="author" content=" Maksym Kornyev">
@@ -138,11 +161,11 @@
 			  </tr>
 			  <tr>
 			    <td>Email</td>
-			    <td>info@thebutterwood.com</td>
+			    <td><a href="mailto:info@thebutterwood.com">info@thebutterwood.com</a></td>
 			  </tr>
 			  <tr>
 			    <td>Web</td>
-			    <td><a href="https://www.thebutterwoodbakeconsortium.com/">thebutterwoodbakingconsortium.com</a></td>
+			    <td><a href="https://www.thebutterwoodbakeconsortium.com/" target="_blank">thebutterwoodbakingconsortium.com</a></td>
 			  </tr>
 			  <tr>
 			    <td>What we look like</td>
@@ -156,6 +179,7 @@
 	<div id="content2">
 		<h2><em>When we're most busy:<em></h2>
 		<div id="wkday_chart"></div>
+		<div id="wkend_chart"></div>
 		
 	</div>
 
@@ -166,14 +190,15 @@
 		<hr>
 
 		<!-- Form -->
-		<form onsubmit="return validate()">
+		<form onsubmit="return validate()" action="mailto:mkornyev@andrew.cmu.edu" method="post" enctype="text/plain">
 		<fieldset>
-			<input type="text" pattern="[A-Za-z -]*" name="name" maxlength="20" placeholder="Name*"><br>
+			<input type="text" pattern="[A-Za-z -]*" name="name" maxlength="20" placeholder="Name*" required><br>
 			<input type="email" pattern=".+@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))" name="email" placeholder="Email*" required><br>
-			<input type="text" pattern="[0-9]{5}" name="zip" placeholder="Name*"/><br>
+			<input type="text" pattern="[0-9]{5}" name="zip" maxlength="5" placeholder="ZIP"/><br>
 			<textarea name="message" rows="10" cols="50" maxlength="1000" placeholder="Leave us a message"></textarea><br>
-			<input class="checkbox" type="checkbox" name="updates" value="on">Send me details<br>
-			<a href="index.html"><button type="button">Submit</button></a>
+			<input class="checkbox" type="checkbox" value="on">Send me details<br>
+			<button type="submit" name="contact_form_submit" value="Send">Submit</button><br/><br/>
+			<button type="reset" name="contact_form_submit" value="Reset">Reset</button>
 		</fieldset>
 		</form>
 
